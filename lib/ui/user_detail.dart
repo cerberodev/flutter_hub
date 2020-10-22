@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hub/models/user.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class UserDetailPage extends StatelessWidget {
+  final User user;
+
+  UserDetailPage({@required this.user});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
