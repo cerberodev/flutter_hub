@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hub/models/user.dart';
+import 'package:flutter_hub/ui/widget/webview.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class UserDetailPage extends StatelessWidget {
@@ -10,7 +11,7 @@ class UserDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('User'),
+        title: Text(user.login),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -31,7 +32,9 @@ class UserDetailPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(25),
                     child: FadeInImage.memoryNetwork(
                       placeholder: kTransparentImage,
-                      image: 'https://avatars0.githubusercontent.com/u/4?v=4',
+                      image: user.avatarUrl,
+                      fit: BoxFit.fitWidth,
+                      width: 400,
                     ),
                   ),
                   SizedBox(
@@ -40,7 +43,7 @@ class UserDetailPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 25, right: 25),
                     child: Text(
-                      'Number ID',
+                      'Your User ID is: ${user.id.toString()}',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -54,7 +57,7 @@ class UserDetailPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(left: 25, right: 25),
                     child: Text(
-                      '@User',
+                      'Your User is: ${user.login}',
                       style: TextStyle(
                         fontSize: 26,
                         fontWeight: FontWeight.bold,
@@ -75,9 +78,21 @@ class UserDetailPage extends StatelessWidget {
                     height: 35,
                   ),
                   Center(
-                    child: OutlineButton(
+                    child: FlatButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      color: Colors.white,
                       onPressed: () {
-                        print('Click');
+                        print('Click on OutlineButton');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => WebViewPage(
+                              url: user.htmlUrl,
+                            ),
+                          ),
+                        );
                       },
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -86,14 +101,15 @@ class UserDetailPage extends StatelessWidget {
                           SizedBox(
                             width: 10,
                           ),
-                          Text('View Profile'),
+                          Text(
+                            'View Profile',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
                         ],
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 35,
-                  ),
+                  SizedBox(height: 35),
                 ],
               ),
             ),

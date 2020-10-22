@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hub/models/user.dart';
 import 'package:flutter_hub/repository/repositoryUsers.dart';
@@ -49,8 +50,12 @@ class UserPage extends StatelessWidget {
                 );
               },
             );
+          } else if (snapshot.hasError) {
+            return Text('${snapshot.error}');
           }
-          ;
+          return Center(
+            child: CupertinoActivityIndicator(),
+          );
         },
       ),
     );
