@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hub/ui/user_detail.dart';
 import 'package:flutter_hub/ui/user_page.dart';
 
 void main() => runApp(MyApp());

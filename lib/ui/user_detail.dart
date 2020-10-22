@@ -14,15 +14,21 @@ class UserDetailPage extends StatelessWidget {
             padding:
                 const EdgeInsets.only(left: 15, right: 15, top: 20, bottom: 20),
             child: Card(
-              elevation: 20,
+              color: Colors.tealAccent,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(25)),
+              elevation: 5,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  FadeInImage.memoryNetwork(
-                    placeholder: kTransparentImage,
-                    image: 'https://avatars0.githubusercontent.com/u/4?v=4',
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(25),
+                    child: FadeInImage.memoryNetwork(
+                      placeholder: kTransparentImage,
+                      image: 'https://avatars0.githubusercontent.com/u/4?v=4',
+                    ),
                   ),
                   SizedBox(
                     height: 20,

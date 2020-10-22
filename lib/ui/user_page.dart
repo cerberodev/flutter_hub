@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hub/ui/user_detail.dart';
-import 'package:transparent_image/transparent_image.dart';
 
 class UserPage extends StatelessWidget {
   @override
