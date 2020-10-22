@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hub/ui/user_detail.dart';
 import 'package:flutter_hub/ui/user_page.dart';
 
 void main() => runApp(MyApp());
@@ -19,6 +20,11 @@ class MyApp extends StatelessWidget {
         ),
         body: UserPage(),
       ),
+      //initialRoute: '/',
+      //routes: {
+      //  '/': (BuildContext context) => UserPage(),
+      //  '/userdetail': (BuildContext context) => UserDetailPage(),
+      //},
     );
   }
 }
