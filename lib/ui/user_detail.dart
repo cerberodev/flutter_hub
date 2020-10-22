@@ -90,6 +90,7 @@ class UserDetailPage extends StatelessWidget {
                           MaterialPageRoute(
                             builder: (context) => WebViewPage(
                               url: user.htmlUrl,
+                              login: user.login,
                             ),
                           ),
                         );

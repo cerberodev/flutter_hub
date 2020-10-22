@@ -9,6 +9,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Hub',
+      theme: ThemeData(
+        primaryColor: Colors.blueGrey,
+      ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
