@@ -6,12 +6,12 @@ import 'package:transparent_image/transparent_image.dart';
 class UserDetailPage extends StatelessWidget {
   final User user;
 
-  UserDetailPage({@required this.user});
+  UserDetailPage({required this.user});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(user.login),
+        title: Text(user.login!),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -32,7 +32,7 @@ class UserDetailPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(25),
                     child: FadeInImage.memoryNetwork(
                       placeholder: kTransparentImage,
-                      image: user.avatarUrl,
+                      image: user.avatarUrl!,
                       fit: BoxFit.fitWidth,
                       width: 400,
                     ),

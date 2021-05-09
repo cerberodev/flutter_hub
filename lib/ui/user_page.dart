@@ -13,7 +13,7 @@ class UserPage extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return ListView.builder(
-              itemCount: snapshot.data.length,
+              itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -21,10 +21,10 @@ class UserPage extends StatelessWidget {
                     leading: CircleAvatar(
                       radius: 25,
                       backgroundImage:
-                          NetworkImage(snapshot.data[index].avatarUrl),
+                          NetworkImage(snapshot.data![index].avatarUrl!),
                     ),
                     title: Text(
-                      snapshot.data[index].login,
+                      snapshot.data![index].login!,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 40,
@@ -41,7 +41,7 @@ class UserPage extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => UserDetailPage(
-                            user: snapshot.data[index],
+                            user: snapshot.data![index],
                           ),
                         ),
                       );

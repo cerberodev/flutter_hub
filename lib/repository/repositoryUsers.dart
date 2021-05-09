@@ -14,10 +14,10 @@ Future<List<User>> fetchUsers() async {
 List<User> createUserList(List data) {
   var lists = <User>[];
   for (var i = 0; i < data.length; i++) {
-    String login = data[i]['login'];
-    String avatarUrl = data[i]['avatar_url'];
-    int id = data[i]['id'];
-    String htmlUrl = data[i]['html_url'];
+    String? login = data[i]['login'];
+    String? avatarUrl = data[i]['avatar_url'];
+    int? id = data[i]['id'];
+    String? htmlUrl = data[i]['html_url'];
     var users = User(
       avatarUrl: avatarUrl,
       htmlUrl: htmlUrl,
