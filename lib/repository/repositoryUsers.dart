@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_hub/models/user.dart';
 
 Future<List<User>> fetchUsers() async {
-  var url = 'https://api.github.com/users';
+  var url = Uri.parse('https://api.github.com/users');
   var response = await http.get(url);
   print(response.body);
   List responseJson = jsonDecode(response.body.toString());
