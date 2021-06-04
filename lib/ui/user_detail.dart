@@ -78,11 +78,14 @@ class UserDetailPage extends StatelessWidget {
                     height: 35,
                   ),
                   Center(
-                    child: FlatButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      color: Colors.white,
+                    child: TextButton(
+                      style: ButtonStyle(
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(style: BorderStyle.none)),
+                      )),
                       onPressed: () {
                         print('Click on OutlineButton');
                         Navigator.push(
